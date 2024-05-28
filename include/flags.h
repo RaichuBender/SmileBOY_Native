@@ -5,7 +5,6 @@
 
 typedef union flags
 {
-	u8 f;
 	struct
 	{
 		u8 _PAD : 4;
