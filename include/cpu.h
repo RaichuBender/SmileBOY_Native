@@ -12,8 +12,12 @@ typedef struct cpu
 			u16 af;
 			struct
 			{
+				union
+				{
+					u8 f;
+					FLAGS flags;
+				};
 				u8 a;
-				FLAGS f;
 			};
 		};
 		union
@@ -21,8 +25,8 @@ typedef struct cpu
 			u16 bc;
 			struct
 			{
-				u8 b;
 				u8 c;
+				u8 b;
 			};
 		};
 		union
@@ -30,8 +34,8 @@ typedef struct cpu
 			u16 de;
 			struct
 			{
-				u8 d;
 				u8 e;
+				u8 d;
 			};
 		};
 		union
@@ -39,8 +43,8 @@ typedef struct cpu
 			u16 hl;
 			struct
 			{
-				u8 h;
 				u8 l;
+				u8 h;
 			};
 		};
 		u16 sp;
