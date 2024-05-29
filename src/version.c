@@ -1,2 +1,2 @@
-unsigned int version_major = _VERSION_MAJOR;
-unsigned int version_minor = _VERSION_MINOR;
+unsigned int VERSION_MAJOR = _VERSION_MAJOR;
+unsigned int VERSION_MINOR = _VERSION_MINOR;

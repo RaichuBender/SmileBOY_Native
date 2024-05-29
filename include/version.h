@@ -1,7 +1,7 @@
 #ifndef VERSION_H
 #define VERSION_H
 
-extern unsigned int version_major;
-extern unsigned int version_minor;
+extern unsigned int VERSION_MAJOR;
+extern unsigned int VERSION_MINOR;
 
 #endif /* VERSION_H */
