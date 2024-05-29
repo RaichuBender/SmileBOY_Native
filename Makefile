@@ -1,7 +1,5 @@
 include options.mk
 
-ifneq ($(OS),Windows_NT)
-
 EXE		= smileboy
 
 CFILES	+= $(shell find src -regex '.*\.c$$')
@@ -16,24 +14,6 @@ INCL	+= $(INCDIRS:%=-I%)
 
 WARN	= -Wall
 OPT		= -O0 -g
-
-DEFINE	+=
-
-LFLAGS	= $(LIBRARY) $(WARN)
-CFLAGS	= $(INCL) $(DEFINE) $(OPT) $(WARN)
-
-else
-
-EXE		= smileboy.exe
-
-CFILES	+= $(shell find src -regex '.*\.c$$')
-OFILES_	+= $(CFILES:src/cpu/%.c=%.obj)
-OFILES	+= $(OFILES_:src/%.c=%.obj)
-
-LIBRARY	+=
-
-WARN	= /Wall
-OPT		= /O0 /g
 
 DEFINE	+=
 
