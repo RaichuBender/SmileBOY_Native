@@ -1,22 +1,24 @@
-EXE	= smileboy
+include options.mk
 
-CFILES	= $(shell find src -regex '.*\.c$$')
-OFILES	= $(CFILES:%.c=%.o)
+EXE		= smileboy
 
-LIBS	=
-LIBDIRS	=
-INCDIRS	= include
+CFILES	+= $(shell find src -regex '.*\.c$$')
+OFILES	+= $(CFILES:%.c=%.o)
 
-LIBRARY	= $(LIBDIRS:%=-L%) $(LIBS:%=-l%)
-INCLUDE	= $(INCDIRS:%=-I%)
+LIBS	+=
+LIBDIRS	+=
+INCDIRS	+= include
+
+LIBRARY	+= $(LIBDIRS:%=-L%) $(LIBS:%=-l%)
+INCL	+= $(INCDIRS:%=-I%)
 
 WARN	= -Wall
-OPT	= -O0 -g
+OPT		= -O0 -g
 
-DEFINE	=
+DEFINE	+=
 
 LFLAGS	= $(LIBRARY) $(WARN)
-CFLAGS	= $(INCLUDE) $(WARN) $(DEFINE) $(OPT)
+CFLAGS	= $(INCL) $(DEFINE) $(OPT) $(WARN)
 
 ################################################################
 
